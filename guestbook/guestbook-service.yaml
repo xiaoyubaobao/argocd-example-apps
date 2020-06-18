@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: guestbook
+  labels:
+    app.kubernetes.io/name: guestbook
+    helm.sh/chart: guestbook-0.2.0
+    app.kubernetes.io/instance: guestbook
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: NodePort
+  ports:
+  - port: 3000
+    targetPort: http-server
+  selector:
+    app.kubernetes.io/name: guestbook
+    app.kubernetes.io/instance: guestbook
