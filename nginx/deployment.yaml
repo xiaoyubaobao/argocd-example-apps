@@ -23,5 +23,12 @@ spec:
           protocol: TCP
         - containerPort: 443
           protocol: TCP
+        resources:
+          limits: 
+            cpu: 50m
+            memory: 50Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
       nodeSelector:
         beta.kubernetes.io/os: linux
